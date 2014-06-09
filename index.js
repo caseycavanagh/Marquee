@@ -10,7 +10,7 @@ var request = require('request');
 var moment = require('moment');
 
 // data
-var feed = 'http://mix.chimpfeedr.com/630a0-dcshows';
+var feed = 'http://mix.chimpfeedr.com/ca0b6-dc-events';
 var wstream = fs.createWriteStream('data.json');
 
 var req = request(feed);
