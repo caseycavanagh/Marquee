@@ -1,3 +1,7 @@
+/**
+ * running index.js will create json of feed specified in `var feed`
+ */
+
 // requires
 var fs = require ('fs');
 var inspect = require('util').inspect;
