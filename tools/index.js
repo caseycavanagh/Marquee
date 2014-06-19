@@ -11,7 +11,7 @@ var moment = require('moment');
 
 // data
 var feed = 'http://mix.chimpfeedr.com/ca0b6-dc-events';
-var wstream = fs.createWriteStream('data.json');
+var ws = fs.createWriteStream('data/data.json');
 
 var req = request(feed);
 var feedparser = new FeedParser({
@@ -24,6 +24,7 @@ req.on('response', function(res) {
     stream.pipe(feedparser)
 });
 
+var first = true;
 feedparser.on('readable', function() {
     // This is where the action is!
     var stream = this;
@@ -41,8 +42,8 @@ feedparser.on('readable', function() {
             var parsed = moment( secondPart, 'MM/DD/YYYY');
             var formattedDate = {
                 'year' : moment( parsed ).format("YYYY"),
-                'month' : moment( parsed ).format("MM"),
-                'day' : moment( parsed ).format("DD")
+                'month' : moment( parsed ).format("MMMM"),
+                'day' : moment( parsed ).format("D")
             }
             return formattedDate
         };
@@ -57,6 +58,16 @@ feedparser.on('readable', function() {
             'date' : date(),
             'time' : time()
         }
-        wstream.write( JSON.stringify(data) + ',' );
+        if (first) {
+            ws.write('[');
+            first = false;
+        } else {
+            ws.write(',')
+        }
+        ws.write( JSON.stringify(data));
     }
-});
+})
+.on('end', function() {
+    ws.write(']');
+})
+;

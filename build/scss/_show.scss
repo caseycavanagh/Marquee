@@ -1,0 +1,43 @@
+.show {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    > * {
+        display: block;
+        font-family: 'Open Sans', sans-serif;
+        margin: 0;
+    }
+    &:nth-child(5n-4) {
+        background: #F0FFC9;
+    }
+    &:nth-child(5n-3) {
+        background: #A9DA88;
+    }
+    &:nth-child(5n-2) {
+        background: #62997A;
+    }
+    &:nth-child(5n-1) {
+        background: #72243D;
+    }
+    &:nth-child(5n) {
+        background: #3B0819;
+    }
+    .show-meta {
+        font-size: 30px;
+    }
+    h1 {
+        width: 100%;
+    }
+    h2 {
+        font-size: 45px;
+    }
+    &.is-hidden {
+        opacity: 0;
+    }
+}
