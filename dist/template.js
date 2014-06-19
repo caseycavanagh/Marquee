@@ -37,9 +37,10 @@
     var MarqueeShow = React.createClass({displayName: 'MarqueeShow',
 
         render: function() {
+            var self = this;
             var show = this.props.shows.map(function( show, i ) {
                 return (
-                    React.DOM.div( {className:i == 0 ? "show" : "show is-hidden", key:i}, 
+                    React.DOM.div( {className:i == self.props.shows.length - 1 ? "show" : "show is-hidden", key:i}, 
                         React.DOM.div( {className:"show-meta"}, 
                             React.DOM.span(null, show.date.month, " ", show.date.day),", ", React.DOM.time( {className:"show-meta"}, show.time)
                         ),
