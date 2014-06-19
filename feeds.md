@@ -8,6 +8,5 @@
 – 9:30 Club: http://www.ticketfly.com/api/events/upcoming.rss?orgId=4
 - Sixth & I Historic Synagogue: http://www.ticketfly.com/api/events/upcoming.rss?orgId=173
 – IMP Events: http://www.ticketfly.com/api/events/upcoming.rss?orgId=105
-- Gypsy Sally's: http://www.ticketfly.com/api/events/upcoming.rss?orgId=2263
 – Lincoln Theater: http://www.ticketfly.com/api/events/upcoming.rss?orgId=2853
 – The Hamilton: http://www.ticketfly.com/api/events/upcoming.rss?orgId=3199
